@@ -2,9 +2,8 @@
 session_start();
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    header('Location: home_page.php');
+    header('Location: /login_register/views/home_page.php');
 } else {
-    header('Location: login.php');
+    header('Location: /login_register/views/login_page.php');
 }
 exit;
-?>
