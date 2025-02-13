@@ -47,7 +47,7 @@ include '../config/database.php';
         ?>
     </div>
     <div>
-        <a href="/login_register/views/login_page.php">Logout</a>
+        <a href="../logout.php">Logout</a>
     </div>
 
 </body>
