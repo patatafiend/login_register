@@ -15,11 +15,12 @@
 
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="col-md-4 p-4 bg-light rounded shadow">
-            <form action="/login_register/models/register.php" method="post" class="form">
+            <form id="register-form" method="post" class="form">
                 <div class="text-center mb-3">
                     <h2>Register</h2>
                 </div>
                 <div class="mb-2">
+                    <input type="hidden" name="function-register" value="register">
                     <label for="username">Username:</label>
                     <input class="form-control" type="text" id="username" name="username" required>
                 </div>

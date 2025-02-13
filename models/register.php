@@ -3,17 +3,26 @@ session_start();
 include '../config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    if (isset($_POST["function-register"]) && $_POST["function-register"] == "register") {
+        $username = $_POST['username'];
+        $success = false;
+        $errors = [];
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $stmt = $conn->prepare('INSERT INTO users (username, password) VALUES (?, ?)');
-    $stmt->bind_param('ss', $username, $password);
+        $stmt = $conn->prepare('INSERT INTO users (username, password) VALUES (?, ?)');
+        $stmt->bind_param('ss', $username, $password);
 
-    if ($stmt->execute()) {
-        header('Location: /login_register/views/login_page.php');
-    } else {
-        echo 'Registration failed: ' . $stmt->error;
+        if ($stmt->execute()) {
+            $success = true;
+        } else {
+            $errors[] = "Invalid Username.";
+        }
+
+        $response = [
+            "success" => $success,
+            "errors" => $errors,
+            "message" => $success ? "Successfully Registered " : "Error Occured"
+        ];
+        echo json_encode($response);
     }
-
-    $stmt->close();
 }
