@@ -16,6 +16,7 @@ INSERT INTO `users` (`id`, `username`, `password`) VALUES
 
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
+  ADD UNIQUE KEY `username` (`username`);
 
 
 
