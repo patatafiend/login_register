@@ -10,8 +10,6 @@
 </head>
 
 <body class="container" style="background-color: rgba(34, 139, 34, 0.5);">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../ajax/login_ajax.js"></script>
 
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="col-md-4 p-4 bg-light rounded shadow fade-in">
@@ -39,18 +37,10 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../ajax/login_ajax.js"></script>
+    <script src="../js/pageshow.js"></script>
 
 </body>
 
 </html>
-
-<script>
-    window.addEventListener("pageshow", function(event) {
-        let formContainer = document.querySelector(".col-md-4");
-        if (formContainer) {
-            formContainer.classList.remove("fade-in");
-            void formContainer.offsetWidth;
-            formContainer.classList.add("fade-in");
-        }
-    });
-</script>

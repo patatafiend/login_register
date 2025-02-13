@@ -10,12 +10,10 @@
 </head>
 
 <body class="container" style="background-color: rgba(34, 139, 34, 0.5);">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../ajax/login_ajax.js"></script>
 
     <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="col-md-4 p-4 bg-light rounded shadow">
-            <form id="register-form" method="post" class="form">
+        <div class="col-md-4 p-4 bg-light rounded shadow fade-in">
+            <form id="register-form" method="post">
                 <div class="text-center mb-3">
                     <h2>Register</h2>
                 </div>
@@ -34,6 +32,10 @@
             </form>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../ajax/login_ajax.js"></script>
+    <script src="../js/pageshow.js"></script>
 
 </body>
 
