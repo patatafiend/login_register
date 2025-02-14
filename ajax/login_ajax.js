@@ -14,7 +14,7 @@ $(() => {
                     alert(response.errors[0]);
                 }else{
                     alert(response.message);
-                    window.location.href = "home_page.php";
+                    //window.location.href = "home_page.php";
                 }
             },
 
